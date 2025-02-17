@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsha's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #808080;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-image: linear-gradient(to bottom, #000, #808080);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #faebd7;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: #000;
+            background-color: #faebd7;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .profile-container {
+            width: 250px;
+            height: 250px;
+            background: gray;
+            margin: 50px;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.5s ease;
+            overflow: hidden;
+            display: block;
+            position: relative;
+        }
+
+        .profile-container.right-aligned {
+            margin: 20px 20px 20px auto;
+        }
+
+        .profile-container:hover {
+            width: 600px;
+            height: 450px; /* Increased height for all containers */
+        }
+
+        /* Specific height for education container */
+        .profile-container.education:hover {
+            height: 520px;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            color: black;
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        .bio {
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            line-height: 1.6;
+            color: white;
+            height: auto;
+            overflow-y: auto; /* Allow scrolling if content doesn't fit */
+            max-height: 280px; /* Limit height and enable scrolling for very long content */
+        }
+
+        .profile-container:hover .bio {
+            opacity: 1;
+        }
+
+        /* Fix for list items in bio */
+        .bio ul,
+        .bio ol {
+            margin-left: 1.5rem;
+        }
+
+        .bio li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Special fix for nested lists */
+        .bio li ol {
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .profile-container, 
+            .profile-container.right-aligned {
+                width: 90%;
+                height: auto;
+                min-height: 250px;
+                margin: 20px auto;
+                max-width: 500px;
+            }
+
+            .profile-container:hover,
+            .profile-container.education:hover {
+                width: 90%;
+                height: auto; 
+                min-height: 450px;
+            }
+
+            .bio {
+                height: auto;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease, opacity 0.5s ease;
+            }
+
+            .profile-container:hover .bio {
+                max-height: 1000px; /* Large enough to fit any content */
+                opacity: 1;
+                overflow-y: auto; /* Re-enable scrolling on hover */
+            }
+
+            .profile-image {
+                margin: 10px auto; /* Center image on mobile */
+            }
+            
+            /* Special fix for education container */
+            .profile-container.education:hover {
+                min-height: 530px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">Certificate</a>
+            <a href="#">About Us</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="profile-container">
+            <h3 class="profile-name">Personal Information</h3>
+            <img src="harsha 123.jpg" alt="Harsha Potharaj" class="profile-image">
+            <div class="bio">
+                <ul>
+                    <li>Name: Harsha Potharaj</li>
+                    <li>Email: harshapotharaj@gmail.com</li>
+                    <li>Phone: 9606405659</li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/p-harsha-a2b41a25b/">LinkedIn</a></li>
+                    <li>GitHub: <a href="https://github.com/Harsha5659">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="profile-container right-aligned">
+            <h3 class="profile-name">About Me</h3>
+            <img src="about.jpg" alt="Harsha Potharaj" class="profile-image">
+            <div class="bio">
+                <p>Hi, I'm Harsha Potharaj, a passionate web developer focused on creating responsive and user-friendly websites. I specialize in HTML, CSS, and JavaScript, constantly learning and expanding my skills in web development.</p>
+                <p style="margin-top: 1rem">I'm currently working on building my portfolio and exploring new web technologies to create innovative solutions.</p>
+            </div>
+        </div>
+        
+        <div class="profile-container education">
+            <h3 class="profile-name">Education</h3>
+            <img src="edu.jpg" alt="Harsha Potharaj" class="profile-image">
+            <div class="bio">
+                <ul>
+                    <li>Degree: BTech</li>
+                    <li>Institution: Presidency University</li>
+                    <li>Year of Study: 3rd year</li>
+                    <li>Relevant Coursework:
+                        <ol>
+                            <li>CyberSecurity</li>
+                            <li>Data Structures & Algorithms</li>
+                            <li>Web Development</li>
+                            <li>Database Management Systems (DBMS)</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile-container right-aligned">
+            <h3 class="profile-name">Skills</h3>
+            <img src="SKILL.jpg" alt="Harsha Potharaj" class="profile-image">
+            <div class="bio">
+                <ul>
+                    <li> Programming : Python , Java</li>
+                    <li> Web Development : HTML , CSS , JavaScript</li>
+                    <li> Tools : Git , Visual Studio Code</li>
+                    <li> Operating System : Windows , Linux</li>
+                    <li> Communiction Skills : Communication</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="profile-container">
+            <h3 class="profile-name">Extracurricular Activities
+            </h3>
+            <img src="extra.jpg" alt="Harsha Potharaj" class="profile-image">
+            <div class="bio">
+                <ul>
+                    <li>Member Of : Vikasana</li>
+                    <li>Participated In : University CTF 2024 Binary Badlands event </li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile-container right-aligned">
+            <h3 class="profile-name">Contact Me</h3>
+            <img src="contact.jpg" alt="Harsha Potharaj" class="profile-image">
+            <div class="bio">
+                <ul>
+                    <li>Open to internships, projects, and collaborations.</li>
+                    <ul><li>
+                        Reach Out via:
+                    </li>
+                    <ol>
+                        <li> Email: harshapotharaj@gmail.com</li>
+                        <li> LinkedIn:<a href="linkedin.com/in/harshapotharaj"> LinkedIn</a></li>
+                        <li> GitHub : <a href="https://github.com/Harsha5659"> GitHub</a></li>
+                    </ol>
+                </ul>
+                    
+               
+                </ul>
+            </div>
+    </div>
+</body>
+</html>
